@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - O Cofre Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container dashboard-container">
+        <header>
+            <h2>🔐 Meus Segredos</h2>
+            <div style="display: flex; gap: 10px;">
+                <button id="btn-new" class="btn-view">Novo Segredo</button>
+                <button id="btn-logout" class="danger btn-view">Sair</button>
+            </div>
+        </header>
+
+        <div id="message" class="hidden"></div>
+
+        <div id="list-view">
+            <div id="secrets-list">
+                <!-- Segredos serão carregados aqui -->
+                <p style="text-align: center; color: var(--text-secondary);">Carregando segredos...</p>
+            </div>
+        </div>
+
+        <div id="create-view" class="hidden">
+            <h3>Guardar Novo Segredo</h3>
+            <form id="secret-form">
+                <div class="form-group">
+                    <label for="sec-title">Título (ex: Senha do Wi-Fi)</label>
+                    <input type="text" id="sec-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="sec-content">Conteúdo Sensível</label>
+                    <textarea id="sec-content" rows="5" required></textarea>
+                </div>
+                <button type="submit">Guardar no Cofre</button>
+                <button type="button" id="btn-cancel" class="secondary">Cancelar</button>
+            </form>
+        </div>
+
+        <div id="detail-view" class="hidden">
+            <h3 id="detail-title"></h3>
+            <div class="form-group">
+                <label>Conteúdo:</label>
+                <div id="detail-content" style="background: var(--bg-color); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); white-space: pre-wrap;"></div>
+            </div>
+            <button type="button" id="btn-back" class="secondary">Voltar para Lista</button>
+        </div>
+        <footer>
+            <p>Desenvolvido por Leonardo Estevão Alves — Registro Acadêmico: 00250458</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
